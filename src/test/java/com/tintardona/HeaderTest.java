@@ -67,5 +67,4 @@ public class HeaderTest {
     public void close() {
         driver.quit();
     }
-
 }
