@@ -1,4 +1,9 @@
 /*
+
+Test cases should be reusable as much as possible
+Test cases should be modular and specific
+Code repetition should be avoided
+
 A. Launch masterclass.com
 B. Maximize the window.
 C. Scroll to top of page.
@@ -22,16 +27,18 @@ C. Scroll to top of page.
 
 
 */
-package com.tintardona;
+package com.tintardona.test.regression.masterclass.com;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
+import com.tintardona.pom.masterclass.com.Home;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import com.tintardona.Pages.Home;
 
 public class HeaderTest {
 
@@ -49,14 +56,16 @@ public class HeaderTest {
     public void isHeaderDisplayed() {
 
         assertTrue(homepage.isHeaderDisplayed());
-    }
-
-    @Test
-    public void isMCLogoDisplayed() {
-
         assertTrue(homepage.isMClogoDisplayed());
     }
 
+    /*
+     * @Test
+     * public void isMCLogoDisplayed() {
+     * 
+     * assertTrue(homepage.isMClogoDisplayed());
+     * }
+     */
     @Test
     public void at_work_buttonClick() {
 

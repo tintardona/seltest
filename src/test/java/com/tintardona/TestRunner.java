@@ -1,5 +1,7 @@
 package com.tintardona;
 
+import com.tintardona.test.regression.masterclass.com.HeaderTest;
+
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
