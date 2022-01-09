@@ -27,7 +27,7 @@ public class Index {
 
     }
 
-    @FindBy(css = "body > div.mc-page__header > div > div > div > div > div:nth-child(5) > button")
+    @FindBy(css = "button[data-ba ='login-button']")
     private WebElement headerLoginButton;
 
     @FindBy(css = "#sign-in-email")
@@ -51,7 +51,7 @@ public class Index {
     @FindBy(css = "body > div.mc-modal.mc-modal--small.authentication-modal.authentication-modal--login > div.mc-modal__viewport > div > div > div > div.mc-background__content-container > div > div > div > p:nth-child(7) > a")
     private WebElement loginModalSignUpButton;
 
-    @FindBy(css = "#sign-in-email")
+    @FindBy(xpath = "/html/body/div[13]/div[2]/div/div/div/div[2]/div/div/div/form/div[1]/div/div[2]/div/input")
     private WebElement signUpModalEmailInput;
 
     @FindBy(css = "#password")
@@ -59,6 +59,9 @@ public class Index {
 
     @FindBy(css = "body > div.mc-modal.mc-modal--small.authentication-modal.authentication-modal--register > div.mc-modal__viewport > div > div > div > div.mc-background__content-container > div > div > div > form > button")
     private WebElement signUpModalCreateAccountButton;
+
+    @FindBy(css = "body > div.mc-modal.mc-modal--small.authentication-modal.authentication-modal--register > div.mc-modal__viewport > div > div > div > div.mc-background__content-container > div > div")
+    private WebElement signUpModal;
 
     /*
      * @FindBy(css = "")
@@ -92,7 +95,8 @@ public class Index {
     public String clickSignUpModalCreateAccountButton() {
         // headerHamburgerMenuDisplays();
 
-        wait.until(ExpectedConditions.elementToBeClickable(signUpModalCreateAccountButton))
+        new WebDriverWait(driver, TIMEOUT)
+                .until(ExpectedConditions.elementToBeClickable(signUpModalCreateAccountButton))
                 .click();
         return driver.getCurrentUrl();
     }
@@ -100,7 +104,7 @@ public class Index {
     public String clickLoginModalSignUpButton() {
         // headerHamburgerMenuDisplays();
 
-        wait.until(ExpectedConditions.elementToBeClickable(loginModalSignUpButton))
+        new WebDriverWait(driver, TIMEOUT).until(ExpectedConditions.elementToBeClickable(loginModalSignUpButton))
                 .click();
         return driver.getCurrentUrl();
     }
@@ -116,13 +120,20 @@ public class Index {
     public String clickHeaderLoginButton() {
         // headerLoginButtonDisplays();
 
-        new WebDriverWait(driver, TIMEOUT).until(ExpectedConditions.elementToBeClickable(this.headerLoginButton))
-                .click();
+        // new WebDriverWait(driver,
+        // TIMEOUT).until(ExpectedConditions.elementToBeClickable(headerLoginButton))
+        headerLoginButton.click();
         return driver.getCurrentUrl();
     }
 
     public Boolean loginModalDisplays() {
-        return new WebDriverWait(driver, TIMEOUT).until(ExpectedConditions.visibilityOf(this.loginModal))
+        return new WebDriverWait(driver, TIMEOUT).until(ExpectedConditions.visibilityOf(loginModal))
+                .isDisplayed();
+
+    }
+
+    public Boolean signInModalDisplays() {
+        return new WebDriverWait(driver, 25).until(ExpectedConditions.visibilityOf(signUpModal))
                 .isDisplayed();
 
     }
@@ -135,7 +146,8 @@ public class Index {
     }
 
     public String enterLoginEmail(String email) {
-        new WebDriverWait(driver, TIMEOUT).until(ExpectedConditions.visibilityOf(loginModalEmailInput)).sendKeys(email);
+
+        signUpModalEmailInput.sendKeys(email);
         return loginModalEmailInput.getText();
     }
 
@@ -152,15 +164,15 @@ public class Index {
         return driver.getCurrentUrl();
     }
 
-    public void enterSignUpEmail(String email) {
-        new WebDriverWait(driver, TIMEOUT).until(ExpectedConditions.visibilityOf(signUpModalEmailInput))
-                .sendKeys(email);
-        // return signUpModalEmailInput.getText();
+    public String enterSignUpEmail(String email1) {
+
+        signUpModalEmailInput.sendKeys(email1);
+        return signUpModalEmailInput.getText();
     }
 
     public String enterSignUpPassword(String password) {
-        new WebDriverWait(driver, TIMEOUT).until(ExpectedConditions.visibilityOf(signUpModalPasswordInput))
-                .sendKeys(password);
+
+        signUpModalPasswordInput.sendKeys(password);
         return signUpModalPasswordInput.getText();
     }
 
