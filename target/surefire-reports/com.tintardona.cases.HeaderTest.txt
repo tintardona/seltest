@@ -1,19 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.tintardona.cases.HeaderTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 17.054 s <<< FAILURE! - in com.tintardona.cases.HeaderTest
-at_work_buttonClick(com.tintardona.cases.HeaderTest)  Time elapsed: 13.444 s  <<< ERROR!
-org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.cssSelector: body > div.mc-page__header > div > div > div > div > div.col-auto.mc-px-0 > a' (tried for 10 second(s) with 500 milliseconds interval)
-	at com.tintardona.cases.HeaderTest.at_work_buttonClick(HeaderTest.java:94)
-Caused by: org.openqa.selenium.NoSuchElementException: 
-no such element: Unable to locate element: {"method":"css selector","selector":"body > div.mc-page__header > div > div > div > div > div.col-auto.mc-px-0 > a"}
-  (Session info: chrome=96.0.4664.110)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-9RJ2NIG', ip: '192.168.1.23', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 96.0.4664.110, chrome: {chromedriverVersion: 96.0.4664.45 (76e4c1bb2ab46..., userDataDir: C:\Users\OMEN\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:52633}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b3e12596ef2fe3b90962f62564a6c008
-*** Element info: {Using=css selector, value=body > div.mc-page__header > div > div > div > div > div.col-auto.mc-px-0 > a}
-	at com.tintardona.cases.HeaderTest.at_work_buttonClick(HeaderTest.java:94)
-
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 21.113 s - in com.tintardona.cases.HeaderTest

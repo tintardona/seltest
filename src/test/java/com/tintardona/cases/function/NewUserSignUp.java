@@ -62,7 +62,7 @@ public class NewUserSignUp {
     @Test
     public void newUserSignUp() {
 
-        String url = "https://www.masterclass.dev";
+        String url = "https://www.masterclass.com";
 
         String email = generateEmail();
         String psswd = "aaaaddddddddddddd";
@@ -71,43 +71,43 @@ public class NewUserSignUp {
 
         // create file named Cookies to store Login Information
 
-        File file = new File("Cookies.data");
-        try {
-            // Delete old file if exists
-            file.delete();
-            file.createNewFile();
-            FileWriter fileWrite = new FileWriter(file);
-            BufferedWriter Bwrite = new BufferedWriter(fileWrite);
-            // loop for getting the cookie information
+        // File file = new File("Cookies.data");
+        // try {
+        //     // Delete old file if exists
+        //     file.delete();
+        //     file.createNewFile();
+        //     FileWriter fileWrite = new FileWriter(file);
+        //     BufferedWriter Bwrite = new BufferedWriter(fileWrite);
+        //     // loop for getting the cookie information
 
-            // loop for getting the cookie information
-            for (Cookie ck : driver.manage().getCookies()) {
-                Bwrite.write((ck.getName() + ";\t" + ck.getValue() + ";\t" + ck.getDomain() +
-                        ";\t" + ck.getPath() + ";"
-                        + ck.getExpiry() + ";\t" + ck.isSecure()));
-                Bwrite.newLine();
-            }
-            Bwrite.close();
-            fileWrite.close();
+        //     // loop for getting the cookie information
+        //     for (Cookie ck : driver.manage().getCookies()) {
+        //         Bwrite.write((ck.getName() + ";\t" + ck.getValue() + ";\t" + ck.getDomain() +
+        //                 ";\t" + ck.getPath() + ";"
+        //                 + ck.getExpiry() + ";\t" + ck.isSecure()));
+        //         Bwrite.newLine();
+        //     }
+        //     Bwrite.close();
+        //     fileWrite.close();
 
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
+        // } catch (Exception ex) {
+        //     ex.printStackTrace();
+        // }
 
         /*
-         * // assertEquals(url, driver.navigateTo());
-         * page.clickHeaderLoginButton();
-         * // assertTrue(page.loginModalDisplays());
-         * page.clickLoginModalSignUpButton();
-         * page.enterSignUpPassword(psswd);
-         * page.enterSignUpEmail(email);
-         * 
-         * // page.clickSignUpModalCreateAccountButton();
-         * // page.clickHeaderHamburgerMenu();
-         * // assertTrue(page.headerHamburgerMenuSignOutAnchorDisplays());
-         * // page.clickheaderHamburgerMenuSignOutAnchor();
-         * // driver.close();
-         * /*
+         * // assertEquals(url, driver.navigateTo());*/
+         page.clickHeaderLoginButton();
+         // assertTrue(page.loginModalDisplays());
+          page.clickLoginModalSignUpButton();
+          page.enterSignUpPassword(psswd);
+          page.enterSignUpEmail(email);
+          
+         page.clickSignUpModalCreateAccountButton();
+         page.clickHeaderHamburgerMenu();
+         //assertTrue(page.headerHamburgerMenuSignOutAnchorDisplays());
+         page.clickheaderHamburgerMenuSignOutAnchor();
+         driver.close();
+         /*
          * Navigate to masterclass.com ER: The page loads
          * 5. Click login button ER: The login modal displays
          * 6. Enter valid email ER: The email input element contains valid email string
