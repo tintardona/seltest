@@ -4,7 +4,7 @@ public class NewUserHomePage {
 
     String url;//URL?
     String title;
-    Element domElement;
+    //Element domElement;
     
     
 }

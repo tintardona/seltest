@@ -1,5 +1,6 @@
-import java.util.Properties;
+package com.tintardona;
 
+import java.util.Properties;
 import org.openqa.selenium.Cookie;
 
 public class Browser {

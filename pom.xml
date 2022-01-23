@@ -19,64 +19,34 @@
   </properties>
 
   <dependencies>
-  
-  
-  
-  <dependency>
-    <groupId>io.appium</groupId>
-    <artifactId>java-client</artifactId>
-    <version>7.6.0</version>
-</dependency>
 
-
-  
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-java</artifactId>
-      <version>7.2.3</version>
-      <type>pom</type>
+      <version>7.2.0</version>
     </dependency>
 
     <dependency>
-
+      <groupId>io.appium</groupId>
+      <artifactId>java-client</artifactId>
+      <version>7.6.0</version>
+    </dependency>
+    <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
       <version>3.141.59</version>
-
     </dependency>
-
-
-
     <dependency>
-
-      <groupId>io.cucumber</groupId>
-
-      <artifactId>cucumber-java</artifactId>
-      <version>7.2.3</version>
-
-      <scope>test</scope>
-
-    </dependency>
-
-<dependency>
-
     <groupId>io.cucumber</groupId>
-
-    <artifactId>cucumber-archetype</artifactId>
-    <version>7.2.3</version>
+    <artifactId>cucumber-junit</artifactId>
+    <version>7.2.0</version>
+    <scope>test</scope>
 </dependency>
 <dependency>
-        <groupId>io.cucumber</groupId>
-        <artifactId>messages</artifactId>
-        <version>17.1.0</version>
-      </dependency>
-
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.2</version>
-      <scope>test</scope>
-    </dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-java</artifactId>
+    <version>7.2.3</version>
+</dependency>
   </dependencies>
 
   <build>
@@ -124,4 +94,15 @@
       </plugins>
     </pluginManagement>
   </build>
-  </project>
+  
+
+    <dependencyManagement>
+      <dependencies>
+        <dependency>
+          <groupId>io.cucumber</groupId>
+          <artifactId>messages</artifactId>
+          <version>17.1.1</version>
+        </dependency>
+      </dependencies>
+    </dependencyManagement>
+</project>
